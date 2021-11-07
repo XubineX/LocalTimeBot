@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
+const wait = require('util').promisify(setTimeout);
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -13,5 +14,7 @@ module.exports = {
 			.addChoice('movie', 'gif_movie')),
 	async execute(interaction) {
 		await interaction.reply({ content: 'gif', ephemeral: true });
+		await wait(2000);
+		await interaction.editReply('gifedit')
 	},
 };
