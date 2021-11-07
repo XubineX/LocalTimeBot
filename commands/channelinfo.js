@@ -14,12 +14,7 @@ module.exports = {
 	async execute(interaction) {
 		const kanal = interaction.options.getChannel('channel').id;
 		const channel = interaction.guild.channels.cache.get(kanal);
-		console.log(kanal);
-		console.log(channel);
-		await wait(200);
-		
 		await channel.send('blabla');
 		await interaction.reply('pong');
-		await wait(2000);
 	},
 };
