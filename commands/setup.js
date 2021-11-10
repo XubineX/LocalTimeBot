@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const wait = require('util').promisify(setTimeout);
-const { MessageActionRow, MessageSelectMenu } = require('discord.js');
+const { MessageActionRow, MessageSelectMenu, Permissions } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -11,6 +11,10 @@ module.exports = {
 			.setDescription('Choose a channel where the bot should create the message')
 			.setRequired(true)),
 	async execute(interaction) {
+		/*await interaction.guild.roles.create({
+			name: "test role 2",
+			persmissions: []
+		});*/
 		const kanal = interaction.options.getChannel('channel').id;
 		const channel = interaction.guild.channels.cache.get(kanal);
 		const row = new MessageActionRow()
