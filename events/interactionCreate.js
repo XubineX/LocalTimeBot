@@ -18,6 +18,7 @@ module.exports = {
 		} else if (interaction.isSelectMenu()) {
 			if (interaction.customId == "select") {
 				await interaction.reply("Your role is: " + interaction.values);
+				interaction.member.roles.add('907955999548243979');
 			}
 		}
 		
