@@ -18,6 +18,7 @@ module.exports = {
 				new MessageSelectMenu()
 					.setCustomId('select')
 					.setPlaceholder('Select your time-zone')
+					.setMaxValues(1)
 					.addOptions([
 						{
 							label: 'lraz',
